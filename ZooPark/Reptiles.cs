@@ -16,9 +16,9 @@ namespace ZooPark
             base.TypeOfAnimal = AnimalType.carnivore;
             base.NumberOfLegs = 0;
         }
-        public Shark(string name, float height)
+        public Shark(string name, float height) : this()
         {
-            base.NumberOfLegs = 0;
+            //base.NumberOfLegs = 0;
             base.Name = name;
             base.AnimalHeight = height;
 
@@ -39,9 +39,9 @@ namespace ZooPark
             base.TypeOfAnimal = AnimalType.herbivore;
             base.NumberOfLegs = 0;
         }
-        public Dolphin(string name, float height)
+        public Dolphin(string name, float height):this()
         {
-            base.NumberOfLegs = 0;
+            //base.NumberOfLegs = 0;
             base.Name = name;
             base.AnimalHeight = height;
 
@@ -62,9 +62,9 @@ namespace ZooPark
             base.TypeOfAnimal = AnimalType.herbivore;
             base.NumberOfLegs = 0;
         }
-        public Chameleon(string name, float height)
+        public Chameleon(string name, float height):this()
         {
-            base.NumberOfLegs = 0;
+            //base.NumberOfLegs = 0;
             base.Name = name;
             base.AnimalHeight = height;
 
@@ -85,9 +85,9 @@ namespace ZooPark
             base.TypeOfAnimal = AnimalType.carnivore;
             base.NumberOfLegs = 4;
         }
-        public Aligator(string name, float height)
+        public Aligator(string name, float height):this()
         {
-            base.NumberOfLegs = 0;
+            //base.NumberOfLegs = 0;
             base.Name = name;
             base.AnimalHeight = height;
 

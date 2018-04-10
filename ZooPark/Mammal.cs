@@ -81,10 +81,10 @@ namespace ZooPark
             base.TypeOfAnimal = AnimalType.carnivore;
             base.NumberOfLegs = 4;
         }
-        public Leopard(string name, float height)
+        public Leopard(string name, float height):this()
         {
-            base.TypeOfAnimal = AnimalType.carnivore;
-            base.NumberOfLegs = 4;
+            //base.TypeOfAnimal = AnimalType.carnivore;
+            //base.NumberOfLegs = 4;
             base.Name = name;
             base.AnimalHeight = height;
 
@@ -105,10 +105,10 @@ namespace ZooPark
             base.TypeOfAnimal = AnimalType.herbivore;
             base.NumberOfLegs = 4;
         }
-        public Giraffe(string name, float height)
+        public Giraffe(string name, float height):this()
         {
-            base.TypeOfAnimal = AnimalType.carnivore;
-            base.NumberOfLegs = 4;
+            //base.TypeOfAnimal = AnimalType.carnivore;
+            //base.NumberOfLegs = 4;
             base.Name = name;
             base.AnimalHeight = height;
 
@@ -129,10 +129,10 @@ namespace ZooPark
             base.TypeOfAnimal = AnimalType.herbivore;
             base.NumberOfLegs = 4;
         }
-        public Sheep(string name, float height)
+        public Sheep(string name, float height):this()
         {
-            base.TypeOfAnimal = AnimalType.carnivore;
-            base.NumberOfLegs = 4;
+            //base.TypeOfAnimal = AnimalType.carnivore;
+            //base.NumberOfLegs = 4;
             base.Name = name;
             base.AnimalHeight = height;
 
