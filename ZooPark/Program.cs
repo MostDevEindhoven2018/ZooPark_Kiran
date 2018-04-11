@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace ZooPark.world
 {
@@ -29,6 +30,7 @@ namespace ZooPark.world
 
             zoo.Add(new Shark());
             zoo.Add(new Dolphin());
+            zoo.Add(new Dolphin("Dolphin",56.5f));
             zoo.Add(new Aligator());
             zoo.Add(new Chameleon());
             zoo.Add(new Chameleon("chameleon", 4.5f));
@@ -36,6 +38,7 @@ namespace ZooPark.world
             zoo.Add(new Penguin());
             zoo.Add(new Owl());
             zoo.Add(new Parrot());
+            zoo.Add(new Parrot("parrot",11.2f));
 
             //Console.WriteLine(zoo[1].GetType().BaseType);
 
@@ -87,16 +90,19 @@ namespace ZooPark.world
             Console.WriteLine($"ZooPark contains {numberOfReptiles} Reptiles.");
             Console.WriteLine($"ZooPark contains {numberOfBirds} Birds.\n");
 
-            List<Animal> carnivoreAnimals = new List<Animal>();
+            List<Animal> carnivoreAnimals = zoo.Where(animal => animal.TypeOfAnimal == AnimalType.carnivore).ToList();
+            //var lis =zoo.OfType<AnimalType.>
 
-            for (int i = 0; i < zoo.Count; i++)
-            {
-                if(zoo[i].TypeOfAnimal == AnimalType.carnivore)
-                {
-                    carnivoreAnimals.Add(zoo[i]);
-                }
+            //List<Animal> carnivoreAnimals = new List<Animal>();
 
-            }
+            //for (int i = 0; i < zoo.Count; i++)
+            //{
+            //    if(zoo[i].TypeOfAnimal == AnimalType.carnivore)
+            //    {
+            //        carnivoreAnimals.Add(zoo[i]);
+            //    }
+
+            //}
 
             Console.WriteLine("The carnivore animals in ZOO are: ");
 
@@ -105,16 +111,18 @@ namespace ZooPark.world
                 Console.Write($"{carnivoreAnimals[i]}\n");
             }
 
-            List<Animal> herbivoreAnimals = new List<Animal>();
+            List<Animal> herbivoreAnimals = zoo.Where(animal => animal.TypeOfAnimal == AnimalType.herbivore).ToList();
 
-            for (int i = 0; i < zoo.Count; i++)
-            {
-                if (zoo[i].TypeOfAnimal == AnimalType.herbivore)
-                {
-                    herbivoreAnimals.Add(zoo[i]);
-                }
+            //List<Animal> herbivoreAnimals = new List<Animal>();
 
-            }
+            //for (int i = 0; i < zoo.Count; i++)
+            //{
+            //    if (zoo[i].TypeOfAnimal == AnimalType.herbivore)
+            //    {
+            //        herbivoreAnimals.Add(zoo[i]);
+            //    }
+
+            //}
 
             Console.WriteLine("\nThe herbivore animals in ZOO are: ");
 
@@ -163,12 +171,12 @@ namespace ZooPark.world
                 {
                     if (herbivoreAnimals.Count > 0)
                     {                     
-                        Console.Write("Carnivore are hunting herbivore, do the ZOO still provide food (Y/N): ");
+                        Console.Write("Carnivore are hunting herbivore, do the ZOO still provide food (Y/N) [[Default response in No]]: ");
                         string input1 = Console.ReadLine();
 
                         if (input1 == "Y" || input1 == "y")
                         {
-                            Console.WriteLine("Animals are safe");
+                            Console.WriteLine("Thank you :) for providing th food and Animals are safe\n");
                             break;
                         }
 
@@ -176,7 +184,16 @@ namespace ZooPark.world
                         {
                             herbivoreAnimals.RemoveAt(0);
                             Console.WriteLine($"1 herbivore is killed and number of herbivor remained is : {herbivoreAnimals.Count}");
+                           
                         }
+
+                        else
+                        {
+                            input1 = Console.ReadLine();
+                            herbivoreAnimals.RemoveAt(0);
+                            Console.WriteLine($"1 herbivore is killed and number of herbivor remained is : {herbivoreAnimals.Count}");
+                        }
+
                     }
                     
                     else if (herbivoreAnimals.Count <= 0)
@@ -232,7 +249,6 @@ namespace ZooPark.world
             }
 
             
-
             Console.ReadKey();
         }
     }

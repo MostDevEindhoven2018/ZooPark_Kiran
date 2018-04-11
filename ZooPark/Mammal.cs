@@ -25,6 +25,7 @@ namespace ZooPark
         
        public Lion()
         {
+            isHungry = true;
             TypeOfAnimal = AnimalType.carnivore;   
             NumberOfLegs = 4;
         }
@@ -54,6 +55,7 @@ namespace ZooPark
     {
         public Tiger()
         {
+            isHungry = false;
             base.TypeOfAnimal = AnimalType.carnivore;
             base.NumberOfLegs = 4;
         }

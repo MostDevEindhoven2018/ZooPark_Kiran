@@ -21,6 +21,7 @@ namespace ZooPark
         {
             base.TypeOfAnimal = AnimalType.carnivore;
             base.NumberOfWings = 2;
+            isHungry = true;
         }
         public Owl(string name, float height):this()
         {
@@ -29,7 +30,7 @@ namespace ZooPark
             base.Name = name;
             base.AnimalHeight = height;
 
-            Console.WriteLine($"I am {base.Name} of type Mammal, I got {base.NumberOfLegs} legs and I'm {base.AnimalHeight} cms");
+            //Console.WriteLine($"I am {base.Name} of type Mammal, I got {base.NumberOfLegs} legs and I'm {base.AnimalHeight} cms");
         }
         public override void Eat()
         {
@@ -42,6 +43,7 @@ namespace ZooPark
     {
         public Penguin()
         {
+            isHungry = false;
             base.TypeOfAnimal = AnimalType.herbivore;
             base.NumberOfWings = 2;
         }
@@ -52,7 +54,7 @@ namespace ZooPark
             base.Name = name;
             base.AnimalHeight = height;
 
-            Console.WriteLine($"I am {base.Name} of type Mammal, I got {base.NumberOfLegs} legs and I'm {base.AnimalHeight} cms");
+            //Console.WriteLine($"I am {base.Name} of type Mammal, I got {base.NumberOfLegs} legs and I'm {base.AnimalHeight} cms");
         }
         public override void Eat()
         {
@@ -76,7 +78,7 @@ namespace ZooPark
             base.Name = name;
             base.AnimalHeight = height;
 
-            Console.WriteLine($"I am {base.Name} of type Mammal, I got {base.NumberOfLegs} legs and I'm {base.AnimalHeight} cms");
+            //Console.WriteLine($"I am {base.Name} of type Mammal, I got {base.NumberOfLegs} legs and I'm {base.AnimalHeight} cms");
         }
 
         public override void Eat()
