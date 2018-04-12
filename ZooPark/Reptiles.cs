@@ -16,6 +16,9 @@ namespace ZooPark
             base.TypeOfAnimal = AnimalType.carnivore;
             base.NumberOfLegs = 0;
         }
+
+        //constructor with input parameters
+
         public Shark(string name, float height) : this()
         {
             //base.NumberOfLegs = 0;
@@ -29,6 +32,8 @@ namespace ZooPark
         {
             Console.WriteLine("I eat only fishes\n");
         }
+
+        //Icarnivore Interface method implementation
 
         public void EatMeat()
         {
@@ -44,6 +49,9 @@ namespace ZooPark
             base.TypeOfAnimal = AnimalType.herbivore;
             base.NumberOfLegs = 0;
         }
+
+        //constructor with input parameters
+
         public Dolphin(string name, float height):this()
         {
             //base.NumberOfLegs = 0;
@@ -58,6 +66,8 @@ namespace ZooPark
             Console.WriteLine("I eat only algae not the fishes\n");
         }
 
+        //Iherbivore Interface method implementation
+
         public void EatGrass()
         {
             Console.WriteLine("I eat only grass");
@@ -71,6 +81,9 @@ namespace ZooPark
             base.TypeOfAnimal = AnimalType.herbivore;
             base.NumberOfLegs = 0;
         }
+
+        //constructor with input parameters
+
         public Chameleon(string name, float height):this()
         {
             //base.NumberOfLegs = 0;
@@ -85,6 +98,8 @@ namespace ZooPark
             Console.WriteLine("I eat only algae not the fishes\n");
         }
 
+        //Iherbivore Interface method implementation
+
         public void EatGrass()
         {
             Console.WriteLine("I eat only grass");
@@ -98,6 +113,9 @@ namespace ZooPark
             base.TypeOfAnimal = AnimalType.carnivore;
             base.NumberOfLegs = 4;
         }
+
+        //constructor with input parameters
+
         public Aligator(string name, float height):this()
         {
             //base.NumberOfLegs = 0;
@@ -111,6 +129,8 @@ namespace ZooPark
         {
             Console.WriteLine("I eat all kinds of fishes\n");
         }
+
+        //Icarnivore Interface method implementation
 
         public void EatMeat()
         {
