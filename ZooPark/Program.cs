@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 
+//Make sure to add using.system.linq;
+
 namespace ZooPark.world
 {
     public class Program
@@ -112,7 +114,17 @@ namespace ZooPark.world
              * 
              */
 
+                        
             List<Icarnivore> carnivoreAnimals = zoo.OfType<Icarnivore>().ToList();
+
+            /*
+             * seperating the carnivores from the zoo list
+             * Method 3 -- using the oftype using casting
+             * 
+             */
+
+
+            //List<Animal> carnivoreAnimals = zoo.OfType<Icarnivore>().Cast<Animal>().ToList();
             //var lis =zoo.OfType<AnimalType.>
 
             //List<Animal> carnivoreAnimals = new List<Animal>();
@@ -126,8 +138,8 @@ namespace ZooPark.world
 
             //}
 
-             
-             
+
+
 
 
 
@@ -253,6 +265,7 @@ namespace ZooPark.world
                             //Console.WriteLine($"carnivore count is: {carnivoreAnimals.Count}");
 
                             carnivoreAnimals.Clear();
+
                             //for (int a = 0; a < carnivoreAnimals.Count; a++)
                             //{
                             //    carnivoreAnimals.RemoveAt(0);
