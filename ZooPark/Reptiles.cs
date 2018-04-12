@@ -9,7 +9,7 @@ namespace ZooPark
         
     }
 
-    public class Shark : Reptiles
+    public class Shark : Reptiles, Icarnivore
     {
         public Shark()
         {
@@ -30,9 +30,14 @@ namespace ZooPark
             Console.WriteLine("I eat only fishes\n");
         }
 
+        public void EatMeat()
+        {
+            Console.WriteLine("I eat only meat");
+        }
+
     }
 
-    public class Dolphin : Reptiles
+    public class Dolphin : Reptiles, Iherbivore
     {
         public Dolphin()
         {
@@ -53,9 +58,13 @@ namespace ZooPark
             Console.WriteLine("I eat only algae not the fishes\n");
         }
 
+        public void EatGrass()
+        {
+            Console.WriteLine("I eat only grass");
+        }
     }
 
-    public class Chameleon : Reptiles
+    public class Chameleon : Reptiles, Iherbivore
     {
         public Chameleon()
         {
@@ -76,9 +85,13 @@ namespace ZooPark
             Console.WriteLine("I eat only algae not the fishes\n");
         }
 
+        public void EatGrass()
+        {
+            Console.WriteLine("I eat only grass");
+        }
     }
 
-    public class Aligator : Reptiles
+    public class Aligator : Reptiles, Icarnivore
     {
         public Aligator()
         {
@@ -97,6 +110,11 @@ namespace ZooPark
         public override void Eat()
         {
             Console.WriteLine("I eat all kinds of fishes\n");
+        }
+
+        public void EatMeat()
+        {
+            Console.WriteLine("I eat only meat");
         }
 
     }

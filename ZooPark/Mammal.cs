@@ -20,7 +20,7 @@ namespace ZooPark
     //    float EatPlants();
     //}
 
-    public class Lion : Mammal
+    public class Lion : Mammal, Icarnivore
     {      
         
        public Lion()
@@ -49,9 +49,15 @@ namespace ZooPark
 
         }
 
+        public void EatMeat()
+        {
+            Console.WriteLine("I eat meat");
+
+        }
+
     }
 
-    public class Tiger : Mammal
+    public class Tiger : Mammal, Icarnivore
     {
         public Tiger()
         {
@@ -74,9 +80,15 @@ namespace ZooPark
             Console.WriteLine("I eat all other animals\n");
         }
 
+        public void EatMeat()
+        {
+            Console.WriteLine("I eat meat");
+
+        }
+
     }
 
-    public class Leopard : Mammal
+    public class Leopard : Mammal, Icarnivore
     {
         public Leopard()
         {
@@ -98,9 +110,15 @@ namespace ZooPark
             Console.WriteLine("I eat all other kind of animals\n");
         }
 
+        public void EatMeat()
+        {
+            Console.WriteLine("I eat meat");
+
+        }
+
     }
 
-    public class Giraffe : Mammal
+    public class Giraffe : Mammal, Iherbivore
     {
         public Giraffe()
         {
@@ -122,9 +140,14 @@ namespace ZooPark
             Console.WriteLine("I eat only grass\n");
         }
 
+        public void EatGrass()
+        {
+            Console.WriteLine("I eat only grass");
+        }
+
     }
 
-    public class Sheep : Mammal
+    public class Sheep : Mammal, Iherbivore
     {
         public Sheep()
         {
@@ -146,5 +169,9 @@ namespace ZooPark
             Console.WriteLine("I eat only grass\n");
         }
 
+        public void EatGrass()
+        {
+            Console.WriteLine("I eat only grass");
+        }
     }
 }

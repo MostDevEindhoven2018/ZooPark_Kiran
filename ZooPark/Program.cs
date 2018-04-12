@@ -8,16 +8,10 @@ namespace ZooPark.world
     {
         public static void Main(string[] args)
         {
-            //Bird bird = new Bird();
-            //bird.Eat();
-            
 
-            //Lion lion = new Lion("Kiran",75.0f);
-            //parrot parrot = new parrot();
+            // All the animals are going to be added to the zoo list
 
-
-
-            List<Animal> zoo = new List<Animal>();
+    List<Animal> zoo = new List<Animal>();
             zoo.Add(new Lion());
             zoo.Add(new Lion("lion1", 85.02f));
             zoo.Add(new Leopard());
@@ -40,7 +34,6 @@ namespace ZooPark.world
             zoo.Add(new Parrot());
             zoo.Add(new Parrot("parrot",11.2f));
 
-            //Console.WriteLine(zoo[1].GetType().BaseType);
 
             int numberOfMammals = 0; int numberOfReptiles = 0; int numberOfBirds = 0;
 
@@ -48,7 +41,12 @@ namespace ZooPark.world
             for (int i = 0; i < zoo.Count; i++)
             {
 
-                //compare list tye to class type
+                //compare zoo list type to class type
+
+                /*
+                 * Method 1 for comparison---directly comparing to mammal
+                 * 
+                 */
 
                 if (zoo[i].GetType().BaseType == typeof(Mammal))
                 {
@@ -64,6 +62,11 @@ namespace ZooPark.world
                 {
                     numberOfBirds++;
                 }
+
+                /*
+                 * Method 2 for comparison--comparing with each animal type
+                 * 
+                 */
 
                 //if (zoo[i].GetType() == typeof(Lion) || zoo[i].GetType() == typeof(Tiger) ||
                 //    zoo[i].GetType() == typeof(Leopard) || zoo[i].GetType() == typeof(Giraffe)
@@ -86,11 +89,30 @@ namespace ZooPark.world
 
             }
 
+                /*
+                 * Prints the number of mammals, reptiles and birds in the list of zoo
+                 * 
+                 */
+
             Console.WriteLine($"ZooPark contains {numberOfMammals} mammals.");
             Console.WriteLine($"ZooPark contains {numberOfReptiles} Reptiles.");
             Console.WriteLine($"ZooPark contains {numberOfBirds} Birds.\n");
 
-            List<Animal> carnivoreAnimals = zoo.Where(animal => animal.TypeOfAnimal == AnimalType.carnivore).ToList();
+            /*
+             * seperating the carnivores from the zoo list
+             * Method 1 -- using the lamda statement with an Enum animal type
+             * 
+             */
+
+            //List<Animal> carnivoreAnimals = zoo.Where(animal => animal.TypeOfAnimal == AnimalType.carnivore).ToList();
+
+            /*
+             * seperating the carnivores from the zoo list
+             * Method 2 -- using the interface Icarnivore
+             * 
+             */
+
+            List<Icarnivore> carnivoreAnimals = zoo.OfType<Icarnivore>().ToList();
             //var lis =zoo.OfType<AnimalType.>
 
             //List<Animal> carnivoreAnimals = new List<Animal>();
@@ -104,6 +126,13 @@ namespace ZooPark.world
 
             //}
 
+             
+             
+
+
+
+
+
             Console.WriteLine("The carnivore animals in ZOO are: ");
 
             for (int i = 0; i < carnivoreAnimals.Count; i++)
@@ -111,8 +140,16 @@ namespace ZooPark.world
                 Console.Write($"{carnivoreAnimals[i]}\n");
             }
 
-            List<Animal> herbivoreAnimals = zoo.Where(animal => animal.TypeOfAnimal == AnimalType.herbivore).ToList();
+          
 
+            //Lamda linq for carnivore
+            //Make sure to add using.system.linq;
+
+            //List<Animal> herbivoreAnimals = zoo.Where(animal => animal.TypeOfAnimal == AnimalType.herbivore).ToList();
+
+            List<Iherbivore> herbivoreAnimals = zoo.OfType<Iherbivore>().ToList();
+
+        
             //List<Animal> herbivoreAnimals = new List<Animal>();
 
             //for (int i = 0; i < zoo.Count; i++)
@@ -125,6 +162,7 @@ namespace ZooPark.world
             //}
 
             Console.WriteLine("\nThe herbivore animals in ZOO are: ");
+
 
             for (int i = 0; i < herbivoreAnimals.Count; i++)
             {

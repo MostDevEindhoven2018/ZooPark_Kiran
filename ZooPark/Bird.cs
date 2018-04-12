@@ -15,7 +15,7 @@ namespace ZooPark
 
     }
 
-    public class Owl : Bird
+    public class Owl : Bird, Icarnivore
     {
         public Owl()
         {
@@ -36,10 +36,15 @@ namespace ZooPark
         {
             Console.WriteLine("I eat small insects and fishes\n");
         }
+        public void EatMeat()
+        {
+            Console.WriteLine("I eat meat");
+
+        }
 
     }
 
-    public class Penguin : Bird
+    public class Penguin : Bird, Iherbivore
     {
         public Penguin()
         {
@@ -61,9 +66,14 @@ namespace ZooPark
             Console.WriteLine("I eat algae\n");
         }
 
+        public void EatGrass()
+        {
+            Console.WriteLine("I eat only grass");
+        }
+
     }
 
-    public class Parrot : Bird
+    public class Parrot : Bird,Iherbivore
     {
 
         public Parrot()
@@ -84,6 +94,11 @@ namespace ZooPark
         public override void Eat()
         {
             Console.WriteLine("I only eat seeds\n");
+        }
+
+        public void EatGrass()
+        {
+            Console.WriteLine("I eat only grass");
         }
 
     }
